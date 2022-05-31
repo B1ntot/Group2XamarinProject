@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Group2XamarinProject.MainPage">
+
+    <StackLayout Margin="40, 15" VerticalOptions="Center" Spacing="12">
+        <Frame BackgroundColor="#2196F3" Padding="24" Margin="0,0,0,30">
+            <Label Text="NAME OF APP" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        
+        <Entry x:Name="username" Placeholder="Username" />
+        <Entry x:Name="password" Placeholder="Password" IsPassword="True" Margin="0,0,0,30" />
+
+        <Button Text="Login" BackgroundColor="#49b0ff" Clicked="LoginClicked" />
+        <Button Text="Register" BackgroundColor="Transparent" Clicked="RegisterClicked"/>
+
+    </StackLayout>
+
+</ContentPage>
