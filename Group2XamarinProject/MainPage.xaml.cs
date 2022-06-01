@@ -42,5 +42,11 @@ namespace Group2XamarinProject
             // Go to RegisterPage
             await Navigation.PushModalAsync(new RegisterPage());
         }
+
+        async private void GameListClicked(object sender, EventArgs e)
+        {
+            // Go to GameListPage
+            await Navigation.PushAsync(new GameListPage());
+        }
     }
 }

@@ -5,6 +5,8 @@
 
 
     <StackLayout Margin="40, 0, 40, 0" VerticalOptions="Center" Spacing="16">
+        <Button Text="Back" BackgroundColor="Transparent" Clicked="BackClicked"/>
+
         <Frame BackgroundColor="#2196F3" Padding="24" Margin="0,0,0,30">
             <Label Text="REGISTER" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>

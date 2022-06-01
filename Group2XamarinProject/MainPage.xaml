@@ -13,6 +13,7 @@
 
         <Button Text="Login" BackgroundColor="#49b0ff" Clicked="LoginClicked" />
         <Button Text="Register" BackgroundColor="Transparent" Clicked="RegisterClicked"/>
+        <Button Text="Game List" BackgroundColor="Transparent" Clicked="GameListClicked"/>
 
     </StackLayout>
 
