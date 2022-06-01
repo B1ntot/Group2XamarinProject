@@ -16,5 +16,11 @@ namespace Group2XamarinProject
         {
             InitializeComponent();
         }
+
+        async private void BackClicked(object sender, EventArgs e)
+        {
+            // Go back to MainPage
+            await Navigation.PopModalAsync(true);
+        }
     }
 }
