@@ -12,22 +12,24 @@ namespace Group2XamarinProject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GameListPage : ContentPage
     {
-
-        class Person
+        class Game
         {
-            public Person(string name, DateTime birthday, Color favoriteColor)
+            public Game(string name, DateTime releaseDate, Color color)
             {
-                this.Name = name;
-                this.Birthday = birthday;
-                this.FavoriteColor = favoriteColor;
+                this.gameName = name;
+                this.releaseDate = releaseDate;
+                this.color = color;
             }
 
-            public string Name { private set; get; }
-
-            public DateTime Birthday { private set; get; }
-
-            public Color FavoriteColor { private set; get; }
-        };
+            //private int gameID { get; set; }
+            public string gameName { private set; get; }
+            //public string gameDesc { get; set; }
+            //public string gameDev { get; set; }
+            //public string gamePub { get; set; }
+            public DateTime releaseDate { private set; get; }
+            public Color color { private set; get; }
+            //public double gamePrice { get; set; }
+        }
 
         public GameListPage()
         {
@@ -40,20 +42,22 @@ namespace Group2XamarinProject
             };
 
             // Define some data.
-            List<Person> people = new List<Person>
+            List<Game> games = new List<Game>
             {
-                new Person("Game 1", new DateTime(1975, 1, 15), Color.Aqua),
-                new Person("Game 2", new DateTime(1976, 2, 20), Color.Black),
+                new Game("Game 1", new DateTime(2006, 1, 15), Color.Aqua),
+                new Game("Game 2", new DateTime(2008, 2, 20), Color.Black),
                 // ...etc.,...
-                new Person("Game 3", new DateTime(1987, 1, 10), Color.Purple),
-                new Person("Game 4", new DateTime(1988, 2, 5), Color.Red)
+                new Game("Game 3", new DateTime(2014, 1, 10), Color.Purple),
+                new Game("Game 4", new DateTime(2019, 2, 5), Color.Red)
             };
+
+            SearchBar searchBar = new SearchBar { Placeholder = "Search items..." };
 
             // Create the ListView.
             ListView listView = new ListView
             {
                 // Source of data items.
-                ItemsSource = people,
+                ItemsSource = games,
 
                 // Define template for displaying each item.
                 // (Argument of DataTemplate constructor is called for 
@@ -62,15 +66,15 @@ namespace Group2XamarinProject
                 {
                     // Create views with bindings for displaying each property.
                     Label nameLabel = new Label();
-                    nameLabel.SetBinding(Label.TextProperty, "Name");
+                    nameLabel.SetBinding(Label.TextProperty, "gameName");
 
-                    Label birthdayLabel = new Label();
-                    birthdayLabel.SetBinding(Label.TextProperty,
-                        new Binding("Birthday", BindingMode.OneWay,
+                    Label releaseDateLabel = new Label();
+                    releaseDateLabel.SetBinding(Label.TextProperty,
+                        new Binding("releaseDate", BindingMode.OneWay,
                             null, null, "Released {0:d}"));
 
                     BoxView boxView = new BoxView();
-                    boxView.SetBinding(BoxView.ColorProperty, "FavoriteColor");
+                    boxView.SetBinding(BoxView.ColorProperty, "color");
 
                     // Return an assembled ViewCell.
                     return new ViewCell
@@ -89,7 +93,7 @@ namespace Group2XamarinProject
                                         Children =
                                         {
                                             nameLabel,
-                                            birthdayLabel
+                                            releaseDateLabel
                                         }
                                         }
                             }
@@ -107,6 +111,7 @@ namespace Group2XamarinProject
                 Children =
                 {
                     header,
+                    searchBar,
                     listView
                 }
             };
