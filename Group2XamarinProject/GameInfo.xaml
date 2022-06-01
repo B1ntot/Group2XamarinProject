@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MacTesting.GameInfo">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary"
+                     Text="Add to Favourites"
+                     Priority="1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <BoxView Color="LightGray" HeightRequest="180"/>
+                <Label Text="Game Title" FontSize="48" />
+                <Label Text="Developed by: Game Studio" FontSize="24" />
+                <Label Text="Published by: Publisher" FontSize="24" />
+                <Label Text="Release Date: 1970 January 01" FontSize="22" />
+                <Label Text="Description" FontSize="22" />
+                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur." FontSize="18" />
+                <Label Text="Features" FontSize="22" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+                <BoxView Color="LightGray" HeightRequest="20" Margin="1" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
